@@ -1,0 +1,13 @@
+{
+  "appId": "com.dam.agendapp",
+  "appName": "nantes-agenda",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
