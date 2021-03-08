@@ -3,7 +3,10 @@
 <template>
   <div class="hello">
     <button v-on:click="getEvents">Get Events</button>
-    <Event  v-for="event in events" v-bind:key="event.recordid"/>
+    <Event
+    v-for="event in events"
+    v-bind:key="event.fields"
+    :fields="event.fields"/>
   </div>
 </template>
 

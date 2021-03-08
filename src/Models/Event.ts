@@ -4,11 +4,11 @@
  * response of the API.
  */
 
-import { IFields } from './IFields';
+import { Fields } from './Fields';
 
-export interface IEvent {
-    datasetid:        string;
-    recordid:         string;
-    fields:           IFields;
+export interface Event {
+    datasetid: string;
+    recordid: string;
+    fields: Fields;
     record_timestamp: Date;
 }
