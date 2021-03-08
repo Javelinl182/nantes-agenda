@@ -1,3 +1,10 @@
+/**
+ * Class representing the fields of an event as it is presented in the API's response.
+ * The generic has been made via https://www.quicktype.io, and the json
+ * response of the API.
+ */
+
+
 export interface IFields {
     lieu_quartier:     string;
     ville:             string;

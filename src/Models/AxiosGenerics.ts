@@ -1,3 +1,8 @@
+/**
+ * Official Axios TypeScript generics taken here:
+ * https://github.com/axios/axios/blob/master/index.d.ts#L140
+ */
+
 export interface AxiosTransformer {
     (data: any, headers?: any): any;
   }

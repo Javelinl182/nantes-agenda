@@ -1,17 +1,21 @@
+<!-- Component for the main page, the first thing user sees -->
+
 <template>
   <div class="hello">
     <button v-on:click="getEvents">Get Events</button>
-    <ul>
-      <li v-for="event in events" v-bind:key="event.recordid">{{event.recordid}}</li>
-    </ul>
+    <Event  v-for="event in events" v-bind:key="event.recordid"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 import { APIServices } from '../services/APIServices'
+import Event from './Event.vue'
 
 @Options({
+  components: {
+    Event
+  },
   props: {
   },
   data () {
