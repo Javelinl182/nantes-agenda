@@ -3,10 +3,14 @@
 <template>
   <div class="hello">
     <button v-on:click="getEvents">Get Events</button>
-    <Event
-    v-for="event in events"
-    v-bind:key="event.fields"
-    :fields="event.fields"/>
+    <div class="columns is-multiline">
+      <Event
+      v-for="event in events"
+      v-bind:key="event.fields"
+      :fields="event.fields"
+      class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen"
+      />
+    </div>
   </div>
 </template>
 
