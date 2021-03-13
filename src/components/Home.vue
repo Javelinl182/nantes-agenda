@@ -2,14 +2,16 @@
 
 <template>
   <div class="hello">
-    <button v-on:click="getEvents">Get Events</button>
+    <button class="button is-primary" v-on:click="getEvents">Get Events</button>
     <div class="columns is-multiline">
-      <Event
-      v-for="event in events"
-      v-bind:key="event.fields"
-      :fields="event.fields"
-      class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen"
-      />
+      <div v-for="event in events" :key="event.recordid"
+      class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
+        <router-link :to="`/event/${event.recordid}`">
+          <Event
+          :fields="event.fields"
+          />
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
