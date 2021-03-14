@@ -1,12 +1,12 @@
 /**
  * Class representing an event as it is presented in the API's response.
- * The generic has been made via https://www.quicktype.io, and the json
+ * The generic has been made via https://www.quicktype.io, from the json
  * response of the API.
  */
 
 import { Fields } from './Fields';
 
-export interface Event {
+export default interface Event {
     datasetid: string;
     recordid: string;
     fields: Fields;

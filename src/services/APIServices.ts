@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Event } from '../Models/Event'
+import Event from '../Models/Event'
 import { AxiosResponse } from '../Models/AxiosGenerics'
 
 export class APIServices {

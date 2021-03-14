@@ -1,24 +1,28 @@
 <template>
     <div>
-        <p>lol</p>
+      <p @click="write()" class="title is-4">lol</p>
     </div>
 </template>
 <script>
 import { Options, Vue } from 'vue-class-component'
-import Field from '../Models/Fields'
 
 @Options({
-  name: 'Event',
-  props: {
-    fields: Field
-  },
+  name: 'EventDetails',
   data () {
     return {
+      fields: null
     }
   },
   computed: {
   },
   methods: {
+    write () {
+      console.log(this.fields)
+    }
+  },
+  created () {
+    this.fields = this.$route.params.data
+    console.log(this.$route.params.data)
   }
 })
 

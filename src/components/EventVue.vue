@@ -29,7 +29,7 @@ import { Options, Vue } from 'vue-class-component'
 import Field from '../Models/Fields'
 
 @Options({
-  name: 'Event',
+  name: 'EventVue',
   props: {
     fields: Field
   },
@@ -43,7 +43,7 @@ import Field from '../Models/Fields'
   }
 })
 
-export default class Event extends Vue {
+export default class EventVue extends Vue {
 
 }
 </script>

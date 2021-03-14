@@ -6,11 +6,10 @@
     <div class="columns is-multiline">
       <div v-for="event in events" :key="event.recordid"
       class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
-        <router-link :to="`/event/${event.recordid}`">
-          <Event
+        <EventVue
+          @click="shareData(event)"
           :fields="event.fields"
           />
-        </router-link>
       </div>
     </div>
   </div>
@@ -19,11 +18,12 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 import { APIServices } from '../services/APIServices'
-import Event from './Event.vue'
+import EventVue from './EventVue.vue'
+import Event from '../Models/Event'
 
 @Options({
   components: {
-    Event
+    EventVue
   },
   props: {
   },
@@ -38,6 +38,11 @@ import Event from './Event.vue'
     async getEvents () {
       const newEvents = await APIServices.getEvents()
       this.events = this.events.concat(newEvents)
+    },
+
+    shareData (event: Event) {
+      console.log(event)
+      this.$router.push({ name: 'EventDetails', params: { id: event.recordid, data: event.recordid } })
     }
   }
 })
