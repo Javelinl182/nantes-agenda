@@ -1,8 +1,16 @@
 <template>
-    <div>
+  <div class="container">
+    <div class="">
         <p>This is an application developped for a class project, by Chloé Bail and Yves-Marie Ip</p>
         <p>University of Nantes (France) -- MIAGE -- 2020 - 2021</p>
     </div>
+    <div class="container">
+      <button class="button is-primary" @click="showMiage()">Détails formation MIAGE</button>
+      <div v-if="isMiage">
+        <a href="https://miage.univ-nantes.fr">Lien vers le contenu de la formation</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,15 +20,15 @@ import { Options, Vue } from 'vue-class-component'
   name: 'About',
   data () {
     return {
-      fields: null
+      isMiage: false
     }
   },
   computed: {
   },
   methods: {
-  },
-  created () {
-    this.fields = this.$route.params
+    showMiage () {
+      this.isMiage = true
+    }
   }
 })
 
