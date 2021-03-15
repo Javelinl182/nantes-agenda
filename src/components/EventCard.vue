@@ -1,6 +1,13 @@
 <!-- Component describing an event for a listing display -->
 <template>
-<div :class="{ 'border-bold': isHovered }" @mouseover="isHovered = true" @mouseleave="isHovered = false">
+<div
+  :class="{
+    'border-bold': isHovered,
+    'opacified': fields.complet !== 'non' || fields.annule !== 'non'
+  }"
+  @mouseover="isHovered = true"
+  @mouseleave="isHovered = false"
+  >
     <div class="card">
       <div class="card-image">
           <figure class="image is-4by3 is48x48">
@@ -17,8 +24,10 @@
           </div>
         </div>
         <div class="content">
-          <p>{{fields.nom}}</p>
+          <p>{{fields.date.split('-')[2]+'-'+fields.date.split('-')[1]+'-'+fields.date.split('-')[0]}}</p>
           <p>{{fields.ville}}</p>
+          <p v-if="fields.complet !== 'non'"><b>Complet</b></p>
+          <p v-if="fields.annule !== 'non'"><b>Annulé</b></p>
         </div>
       </div>
     </div>
@@ -29,7 +38,7 @@
 import { Options, Vue } from 'vue-class-component'
 
 @Options({
-  name: 'EventVue',
+  name: 'EventCard',
   props: {
     fields: null
   },
@@ -44,7 +53,7 @@ import { Options, Vue } from 'vue-class-component'
   }
 })
 
-export default class EventVue extends Vue {
+export default class EventCard extends Vue {
 
 }
 </script>
@@ -52,5 +61,9 @@ export default class EventVue extends Vue {
 <style scoped>
 .border-bold {
   border: 2px solid #3B5E2B;
+}
+
+.opacified {
+  opacity: 0.7
 }
 </style>

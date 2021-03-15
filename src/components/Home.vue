@@ -6,7 +6,7 @@
     <div class="columns is-multiline">
       <div v-for="event in events" :key="event.recordid"
       class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
-        <EventVue
+        <EventCard
           @click="shareData(event)"
           :fields="event.fields"
           />
@@ -18,12 +18,12 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 import { APIServices } from '../services/APIServices'
-import EventVue from './EventVue.vue'
+import EventCard from './EventCard.vue'
 import Event from '../Models/Event'
 
 @Options({
   components: {
-    EventVue
+    EventCard
   },
   props: {
   },
@@ -36,7 +36,7 @@ import Event from '../Models/Event'
   },
   methods: {
     async getEvents () {
-      const newEvents = await APIServices.getEvents()
+      const newEvents: Event[] = await APIServices.getEvents()
       this.events = this.events.concat(newEvents)
     },
 
