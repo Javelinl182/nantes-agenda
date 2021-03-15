@@ -1,6 +1,6 @@
 <!-- Component describing an event for a listing display -->
 <template>
-<div class="event">
+<div :class="{ 'border-bold': isHovered }" @mouseover="isHovered = true" @mouseleave="isHovered = false">
     <div class="card">
       <div class="card-image">
           <figure class="image is-4by3 is48x48">
@@ -35,6 +35,7 @@ import { Options, Vue } from 'vue-class-component'
   },
   data () {
     return {
+      isHovered: false
     }
   },
   computed: {
@@ -49,7 +50,7 @@ export default class EventVue extends Vue {
 </script>
 
 <style scoped>
-.event {
+.border-bold {
   border: 2px solid #3B5E2B;
 }
 </style>
