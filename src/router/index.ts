@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../components/Home.vue'
 import EventDetails from '../components/EventDetails.vue'
+import About from '../components/About.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -12,6 +13,11 @@ const routes: RouteRecordRaw[] = [
     path: '/event/:id',
     name: 'EventDetails',
     component: EventDetails
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 

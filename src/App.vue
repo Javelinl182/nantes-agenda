@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item" @click="alertBulma()">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
     </a>
 
@@ -14,11 +14,11 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
+      <a class="navbar-item" href="/">
         Home
       </a>
 
-      <a class="navbar-item">
+      <a class="navbar-item" href="https://github.com/Javelinl182/nantes-agenda" target="_blank">
         Documentation
       </a>
 
@@ -28,17 +28,13 @@
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
+          <router-link class="navbar-item" to="/about">
             About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
+          </router-link>
+          <a class="navbar-item" href="mailto: yvesmarie.ip@hotmail.fr">
             Contact
           </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
+          <a class="navbar-item" href="https://github.com/Javelinl182/nantes-agenda/issues" target="_blank">
             Report an issue
           </a>
         </div>
@@ -48,10 +44,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary" @click="alert()">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <a class="button is-light" @click="alert()">
             Log in
           </a>
         </div>
@@ -61,6 +57,26 @@
 </nav>
   <router-view/>
 </template>
+
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component'
+
+@Options({
+  methods: {
+    alert () {
+      alert('Functionnality not implemented yet!')
+    },
+    alertBulma () {
+      if (confirm('Bulma is the library that helps us prettifying this app. Do you want to see their documentation?')) {
+        window.open('https://bulma.io')
+      }
+    }
+  }
+})
+export default class Home extends Vue {
+
+}
+</script>
 
 <style>
 #app {

@@ -41,8 +41,9 @@ import Event from '../Models/Event'
     },
 
     shareData (event: Event) {
-      console.log(event)
-      this.$router.push({ name: 'EventDetails', params: { id: event.recordid, data: event.recordid } })
+      const fields: any = event.fields
+      fields.id = event.recordid
+      this.$router.push({ name: 'EventDetails', params: fields })
     }
   }
 })

@@ -4,7 +4,7 @@
  * response of the API.
  */
 
-import { Fields } from './Fields';
+import Fields from './Fields';
 
 export default interface Event {
     datasetid: string;

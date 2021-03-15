@@ -24,14 +24,14 @@
     </div>
   </div>
 </template>
-<script>
+
+<script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import Field from '../Models/Fields'
 
 @Options({
   name: 'EventVue',
   props: {
-    fields: Field
+    fields: null
   },
   data () {
     return {

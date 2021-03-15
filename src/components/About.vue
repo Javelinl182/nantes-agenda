@@ -1,14 +1,15 @@
 <template>
     <div>
-      <p class="title is-4">lol</p>
+        <p>This is an application developped for a class project, by Chloé Bail and Yves-Marie Ip</p>
+        <p>University of Nantes (France) -- MIAGE -- 2020 - 2021</p>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 
 @Options({
-  name: 'EventDetails',
+  name: 'About',
   data () {
     return {
       fields: null
@@ -23,10 +24,11 @@ import { Options, Vue } from 'vue-class-component'
   }
 })
 
-export default class EventDetails extends Vue {
+export default class About extends Vue {
 
 }
 </script>
 
 <style scoped>
+
 </style>

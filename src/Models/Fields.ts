@@ -4,7 +4,7 @@
  * response of the API.
  */
 
-export interface Fields {
+export default interface Fields {
     lieu_quartier: string;
     ville: string;
     h_lsf: string;
