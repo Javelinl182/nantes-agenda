@@ -64,6 +64,6 @@ export default class EventCard extends Vue {
 }
 
 .opacified {
-  opacity: 0.7
+  opacity: 0.5
 }
 </style>

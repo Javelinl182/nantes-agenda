@@ -55,7 +55,12 @@
     </div>
   </div>
 </nav>
+<div class="container">
   <router-view/>
+  </div>
+  <hr>
+  <footer>
+  </footer>
 </template>
 
 <script lang="ts">

@@ -2,7 +2,6 @@
 
 <template>
   <div class="hello">
-    <button class="button is-primary" v-on:click="getEvents">Get Events</button>
     <div class="columns is-multiline">
       <div v-for="event in events" :key="event.recordid"
       class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
@@ -11,6 +10,9 @@
           :fields="event.fields"
           />
       </div>
+    </div>
+    <div>
+        <button class="button is-primary" v-on:click="getEvents">Get Events</button>
     </div>
   </div>
 </template>
