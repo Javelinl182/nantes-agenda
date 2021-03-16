@@ -38,14 +38,23 @@ import Event from '../Models/Event'
   },
   methods: {
     async getEvents () {
-      const newEvents: Event[] = await APIServices.getEvents()
+      const newEvents: Event[] = await APIServices.getEvents(this.events.length)
       this.events = this.events.concat(newEvents)
+      localStorage.setItem('allEvents', JSON.stringify(this.events))
     },
 
     shareData (event: Event) {
       const fields: any = event.fields
       fields.id = event.recordid
       this.$router.push({ name: 'EventDetails', params: fields })
+    }
+  },
+  created () {
+    const events: Event[] = JSON.parse(localStorage.getItem('allEvents')!)
+    if (events === null) {
+      this.getEvents()
+    } else {
+      this.events = events
     }
   }
 })

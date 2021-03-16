@@ -14,9 +14,9 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="/">
+      <router-link class="navbar-item" to="/">
         Home
-      </a>
+      </router-link>
 
       <a class="navbar-item" href="https://github.com/Javelinl182/nantes-agenda" target="_blank">
         Documentation
