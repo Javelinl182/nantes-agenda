@@ -36,6 +36,9 @@
       </tbody>
     </table>
   </div>
+  <div>
+    <button class="button" @click="goBack">Retour</button>
+  </div>
 </template>
 
 <script>
@@ -51,6 +54,9 @@ import { Options, Vue } from 'vue-class-component'
   computed: {
   },
   methods: {
+    goBack () {
+      window.history.back()
+    }
   },
   created () {
     this.fields = this.$route.params

@@ -1,5 +1,6 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+<section class="section">
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" @click="alertBulma()">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
@@ -55,6 +56,7 @@
     </div>
   </div>
 </nav>
+</section>
 <div class="container">
   <router-view/>
   </div>

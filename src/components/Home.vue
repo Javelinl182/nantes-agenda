@@ -12,7 +12,8 @@
       </div>
     </div>
     <div>
-        <button class="button is-primary" v-on:click="getEvents">Get Events</button>
+        <button class="button is-primary" style="margin-right:2px" v-on:click="getEvents">Get more events</button>
+        <button class="button is-primary" style="margin-left:2px" v-on:click="refreshList">Refresh list</button>
     </div>
   </div>
 </template>
@@ -47,6 +48,13 @@ import Event from '../Models/Event'
       const fields: any = event.fields
       fields.id = event.recordid
       this.$router.push({ name: 'EventDetails', params: fields })
+    },
+
+    refreshList () {
+      this.events = []
+      localStorage.removeItem('allEvents')
+      console.log('refreshlist')
+      this.getEvents()
     }
   },
   created () {
